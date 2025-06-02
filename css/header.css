@@ -1,0 +1,130 @@
+/* Header */
+
+header {
+  border-bottom: 1px solid rgba(36, 42, 46, 0.2);
+  border-top: 1px solid rgba(36, 42, 46, 0.2);
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    padding: 1.15rem 1.5rem;
+
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+
+    .nav__right {
+      display: flex;
+      gap: 3rem;
+      font-size: 1rem;
+
+      p {
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        font-size: 1rem;
+        transition: all 0.5s ease;
+        transform-origin: 100% 50%;
+        cursor: pointer;
+        font-weight: 400;
+
+        &:after {
+          content: attr(data-test);
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform-origin: 100% 50%;
+
+          width: 100%;
+          height: 100%;
+
+          transform: translate3d(0, -200%, 0);
+          transition: all 0.3s ease;
+        }
+      }
+
+      p:after {
+        position: absolute;
+        content: attr(data-category-name);
+        height: 100%;
+        top: 0;
+        transform-origin: 100% 50%;
+        transform: translate3d(0, -200%, 0);
+        transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+
+      p span {
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      p:hover {
+        &::after {
+          transform: translate3d(0, 0, 0);
+        }
+
+        span {
+          transform: translate3d(0, 200%, 0);
+        }
+      }
+    }
+
+    .nav__left {
+      display: flex;
+      gap: 3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      align-items: center;
+
+      .burger-menu {
+        position: relative;
+        min-width: 3.8rem;
+        height: 16px;
+        line-height: 1;
+        cursor: pointer;
+
+        &:hover {
+          > .bar-1,
+          .bar-3 {
+            width: 50%;
+            margin: 0 auto;
+          }
+        }
+
+        .bar {
+          position: absolute;
+          width: 3.8rem;
+          height: 2px;
+          background: #000;
+          transition: all 0.3s ease;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .bar-1 {
+          top: 0;
+        }
+
+        .bar-2 {
+          top: 6px;
+        }
+
+        .bar-3 {
+          top: 12px;
+        }
+      }
+
+      p {
+        cursor: pointer;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+}

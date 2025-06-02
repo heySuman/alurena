@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("./css/stacking.css");
+@import url("./css/header.css");
 
 :root {
   --light-green: #cde9dd;
@@ -11,82 +13,6 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-/* Header */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(36, 42, 46, 0.2);
-  border-top: 1px solid rgba(36, 42, 46, 0.2);
-  font-family: "Poppins", sans-serif;
-  padding: 1.5rem 1.2rem;
-
-  .nav__right {
-    display: flex;
-    gap: 3rem;
-    font-size: 1rem;
-  }
-
-  .nav__middle {
-  }
-
-  .nav__left {
-    display: flex;
-    gap: 3rem;
-    font-size: 1rem;
-    font-weight: 600;
-    align-items: center;
-
-    .burger-menu {
-      position: relative;
-      min-width: 3.5rem;
-      height: 10px;
-      line-height: 1;
-      cursor: pointer;
-
-      &:hover {
-        > .bar-1,
-        .bar-3 {
-          width: 50%;
-          margin: 0 auto;
-        }
-      }
-
-      .bar {
-        position: absolute;
-        width: 3.5rem;
-        height: 2px;
-        background: #000;
-        transition: all 0.3s ease;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .bar-1 {
-        top: 0;
-      }
-
-      .bar-2 {
-        top: 5px;
-      }
-
-      .bar-3 {
-        top: 10px;
-      }
-    }
-
-    p {
-      cursor: pointer;
-
-      &:hover {
-        color: red;
-        transition: all 0.3s ease;
-      }
-    }
-  }
 }
 
 .home {
@@ -279,16 +205,18 @@ header {
 /* Categories */
 
 .categories {
-  padding: 4.6875rem 1.5rem;
+  padding: 3.5rem 1.5rem;
   font-family: "Poppins", sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
 
   .categories__wrapper {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     margin: 0 auto;
+    padding: 1rem 0;
     margin-bottom: 1.5rem;
-    padding: 1.5rem 0;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     height: fit-content;
@@ -413,15 +341,34 @@ header {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        
+
         h2 {
           font-family: "Poppins", sans-serif;
           font-weight: 400;
         }
-        p{
+        p {
           margin: 0;
-        };
+        }
       }
     }
+  }
+}
+
+/* Media Query for the home page */
+header {
+  nav {
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+}
+
+.home {
+  max-width: 1200px;
+  min-height: 50vh;
+  margin: 0 auto;
+  flex-direction: column;
+  .home__content__row {
   }
 }
